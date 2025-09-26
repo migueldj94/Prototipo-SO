@@ -26,6 +26,24 @@ def buscar_proceso():
     
     print(f"\nSe encontraron {encontrados} procesos")
 
+def mostrar_estadisticas():
+    """Función para mostrar estadísticas del sistema"""
+    print("\n" + "="*50)
+    print("ESTADÍSTICAS DEL SISTEMA")
+    print("="*50)
+    
+    # Uso de CPU
+    cpu_percent = psutil.cpu_percent(interval=1)
+    print(f"Uso de CPU: {cpu_percent}%")
+    
+    # Uso de memoria
+    memoria = psutil.virtual_memory()
+    print(f"Uso de memoria: {memoria.percent}%")
+    
+    # Número total de procesos
+    procesos = list(psutil.process_iter(['pid']))
+    print(f"Total de procesos ejecutándose: {len(procesos)}")
+
 def main():
     try:
         while True:
@@ -37,7 +55,7 @@ def main():
             print("="*50)
             print("1. Mostrar todos los procesos")
             print("2. Buscar proceso por nombre")
-            print("3. Mostrar estadísticas del sistema (pendiente)")
+            print("3. Mostrar estadísticas del sistema ")      
             print("4. Salir")
             print("-"*50)
             
@@ -48,7 +66,8 @@ def main():
             elif opcion == "2":
                 buscar_proceso()
             elif opcion == "3":
-                print("\nFuncionalidad en construcción.")
+                mostrar_estadisticas()
+
             elif opcion == "4":
                 print("\n¡Hasta luego!")
                 break
