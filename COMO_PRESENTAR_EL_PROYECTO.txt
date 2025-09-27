@@ -1,0 +1,249 @@
+===============================================================================
+                    GUÍA PARA PRESENTAR EL PROYECTO
+                    SISTEMA DE ARCHIVOS SIMULADO
+===============================================================================
+
+📋 INFORMACIÓN GENERAL DEL PROYECTO
+===============================================================================
+
+TÍTULO: Prototipo de Sistema de Archivos Simulado para Sistemas Operativos
+OBJETIVO: Implementar un sistema de archivos tipo FAT simplificado en Python
+CONTEXTO: Proyecto académico para la materia de Sistemas Operativos
+VERSIÓN: 2.0
+
+🎯 OBJETIVOS CUMPLIDOS
+===============================================================================
+
+✅ OBJETIVOS PRINCIPALES:
+   • Implementar estructura de datos tipo FAT (File Allocation Table)
+   • Crear operaciones CRUD completas (Create, Read, Update, Delete)
+   • Desarrollar navegación jerárquica de directorios
+   • Implementar persistencia de datos en disco virtual
+   • Crear interfaz de línea de comandos interactiva
+   • Desarrollar suite de pruebas automatizadas
+
+✅ CARACTERÍSTICAS TÉCNICAS IMPLEMENTADAS:
+   • Simulación de disco virtual con archivo JSON
+   • Tabla FAT para gestión de bloques de datos
+   • Nodos de archivos y directorios en memoria
+   • Manejo robusto de errores y validaciones
+   • Estadísticas del sistema en tiempo real
+   • Documentación completa del código
+
+🏗️ ARQUITECTURA DEL SISTEMA
+===============================================================================
+
+El sistema está compuesto por tres componentes principales:
+
+1. **FileNode** (filesystem.py)
+   - Representa archivos y directorios en memoria
+   - Almacena metadatos: nombre, tipo, tamaño, contenido
+   - Mantiene referencias a nodos padre e hijos
+
+2. **VirtualDisk** (filesystem.py)
+   - Simula el almacenamiento físico del disco
+   - Gestiona la tabla FAT para asignación de bloques
+   - Maneja la persistencia en archivo JSON
+   - Controla la fragmentación y optimización del espacio
+
+3. **FileSystem** (filesystem.py)
+   - Interfaz principal del sistema de archivos
+   - Proporciona operaciones de alto nivel (CRUD)
+   - Gestiona la navegación entre directorios
+   - Mantiene estadísticas y estado del sistema
+
+📁 ESTRUCTURA DE ARCHIVOS DEL PROYECTO
+===============================================================================
+
+os-prototype-fs/
+├── filesystem.py          # Núcleo del sistema de archivos
+├── shell.py              # Interfaz de línea de comandos interactiva
+├── demo.py               # Demostración completa de funcionalidades
+├── test_crud.py          # Suite de pruebas automatizadas (45 tests)
+├── COMO_PRESENTAR_EL_PROYECTO.txt  # Esta guía
+└── *.json                # Archivos de disco virtual (generados automáticamente)
+
+🚀 CÓMO EJECUTAR Y DEMOSTRAR EL PROYECTO
+===============================================================================
+
+1. **DEMOSTRACIÓN AUTOMÁTICA** (Recomendado para presentaciones):
+   ```
+   python demo.py
+   ```
+   - Ejecuta una demostración completa y visual
+   - Muestra todas las funcionalidades paso a paso
+   - Incluye datos de prueba realistas
+   - Genera estadísticas del sistema
+   - Duración aproximada: 3-5 minutos
+
+2. **MODO INTERACTIVO** (Para exploración manual):
+   ```
+   python shell.py
+   ```
+   - Interfaz de comandos similar a un shell Unix
+   - Permite explorar el sistema manualmente
+   - Comandos disponibles: ls, cd, mkdir, touch, cat, rm, etc.
+   - Ideal para responder preguntas específicas
+
+3. **PRUEBAS AUTOMATIZADAS** (Para validación técnica):
+   ```
+   python test_crud.py
+   ```
+   - Ejecuta 45 pruebas automatizadas
+   - Valida todas las operaciones del sistema
+   - Incluye casos de error y límites
+   - Muestra cobertura completa de funcionalidades
+
+🎤 ESTRUCTURA SUGERIDA PARA LA PRESENTACIÓN
+===============================================================================
+
+**INTRODUCCIÓN (2-3 minutos)**
+• Presentar el contexto y objetivos del proyecto
+• Explicar qué es un sistema de archivos y por qué es importante
+• Mencionar las tecnologías utilizadas (Python, JSON, estructuras de datos)
+
+**DEMOSTRACIÓN TÉCNICA (5-7 minutos)**
+• Ejecutar `python demo.py` en vivo
+• Explicar cada sección mientras se ejecuta:
+  - Inicialización del sistema
+  - Creación de directorios
+  - Operaciones con archivos (CRUD)
+  - Navegación entre directorios
+  - Persistencia de datos
+• Mostrar las estadísticas finales del sistema
+
+**ARQUITECTURA Y CÓDIGO (3-5 minutos)**
+• Abrir filesystem.py y explicar los componentes principales
+• Mostrar la estructura de la clase FileSystem
+• Explicar cómo funciona la tabla FAT
+• Demostrar la persistencia con archivos JSON
+
+**PRUEBAS Y VALIDACIÓN (2-3 minutos)**
+• Ejecutar `python test_crud.py` para mostrar robustez
+• Explicar la importancia de las pruebas automatizadas
+• Mostrar algunos casos de prueba específicos
+
+**MODO INTERACTIVO (2-3 minutos)**
+• Ejecutar `python shell.py`
+• Demostrar algunos comandos en vivo
+• Responder preguntas específicas del evaluador
+
+**CONCLUSIONES (1-2 minutos)**
+• Resumir los objetivos cumplidos
+• Mencionar posibles mejoras futuras
+• Destacar el aprendizaje obtenido
+
+💡 PUNTOS CLAVE PARA DESTACAR
+===============================================================================
+
+**ASPECTOS TÉCNICOS IMPORTANTES:**
+• Implementación completa de un sistema de archivos funcional
+• Uso de estructuras de datos avanzadas (árboles, tablas hash)
+• Manejo robusto de errores y casos límite
+• Persistencia de datos entre sesiones
+• Interfaz de usuario intuitiva y profesional
+
+**CONCEPTOS DE SISTEMAS OPERATIVOS APLICADOS:**
+• File Allocation Table (FAT) - gestión de bloques
+• Inodos y metadatos de archivos
+• Navegación jerárquica de directorios
+• Operaciones atómicas y consistencia de datos
+• Abstracción de hardware (disco virtual)
+
+**BUENAS PRÁCTICAS DE PROGRAMACIÓN:**
+• Código bien documentado y estructurado
+• Separación de responsabilidades (clases especializadas)
+• Manejo de excepciones y validación de entrada
+• Pruebas automatizadas exhaustivas
+• Interfaz de usuario clara y amigable
+
+🔧 COMANDOS DISPONIBLES EN EL SHELL INTERACTIVO
+===============================================================================
+
+NAVEGACIÓN:
+• ls / dir          - Listar contenido del directorio actual
+• cd <directorio>   - Cambiar de directorio
+• pwd              - Mostrar directorio actual
+• tree             - Mostrar estructura completa del sistema
+
+GESTIÓN DE DIRECTORIOS:
+• mkdir <nombre>    - Crear directorio
+• rmdir <nombre>    - Eliminar directorio (debe estar vacío)
+
+GESTIÓN DE ARCHIVOS:
+• touch <archivo>   - Crear archivo vacío
+• cat <archivo>     - Mostrar contenido de archivo
+• echo <texto> > <archivo> - Escribir texto en archivo
+• rm <archivo>      - Eliminar archivo
+• cp <origen> <destino>    - Copiar archivo
+• mv <origen> <destino>    - Mover/renombrar archivo
+
+INFORMACIÓN DEL SISTEMA:
+• stats            - Mostrar estadísticas del sistema
+• help             - Mostrar ayuda de comandos
+• exit / quit      - Salir del shell
+
+📊 MÉTRICAS Y ESTADÍSTICAS DEL SISTEMA
+===============================================================================
+
+El sistema proporciona métricas en tiempo real:
+• Total de directorios creados
+• Total de archivos almacenados
+• Tamaño total de datos en bytes
+• Número de operaciones realizadas
+• Eficiencia de la tabla FAT
+• Fragmentación del disco virtual
+
+🎯 PREGUNTAS FRECUENTES Y RESPUESTAS SUGERIDAS
+===============================================================================
+
+**P: ¿Por qué eligieron Python en lugar de C/C++?**
+R: Python permite enfocarse en los conceptos de sistemas operativos sin la complejidad de gestión de memoria manual. El objetivo es demostrar comprensión de algoritmos y estructuras de datos.
+
+**P: ¿Cómo manejan la concurrencia?**
+R: Este prototipo es single-threaded, pero la arquitectura permite extensión futura para soporte multi-threading con locks apropiados.
+
+**P: ¿Qué tan escalable es el sistema?**
+R: La implementación actual es adecuada para propósitos educativos. Para producción, se necesitarían optimizaciones como índices B-tree y caché de metadatos.
+
+**P: ¿Soporta permisos de archivos?**
+R: La versión actual no incluye permisos, pero la arquitectura permite agregar esta funcionalidad fácilmente.
+
+**P: ¿Cómo se compara con sistemas reales como ext4 o NTFS?**
+R: Es una simplificación educativa que implementa los conceptos fundamentales. Los sistemas reales incluyen características avanzadas como journaling, compresión, y optimizaciones de rendimiento.
+
+🔮 POSIBLES EXTENSIONES FUTURAS
+===============================================================================
+
+• Implementación de permisos y usuarios
+• Soporte para enlaces simbólicos y duros
+• Compresión automática de archivos
+• Sistema de journaling para recuperación
+• Interfaz gráfica de usuario
+• Soporte para múltiples discos virtuales
+• Optimizaciones de rendimiento y caché
+• Cifrado de archivos sensibles
+
+📝 NOTAS PARA EL PRESENTADOR
+===============================================================================
+
+• Practicar la demostración antes de la presentación
+• Tener el código abierto en un editor para mostrar detalles
+• Preparar datos de prueba interesantes si se requiere demostración manual
+• Conocer bien los 45 casos de prueba para responder preguntas técnicas
+• Estar preparado para explicar cualquier parte del código
+• Tener ejemplos de uso práctico del sistema de archivos
+
+===============================================================================
+                            ¡BUENA SUERTE!
+===============================================================================
+
+Este proyecto demuestra una comprensión sólida de los conceptos fundamentales
+de sistemas operativos y habilidades de programación avanzadas. La 
+implementación es robusta, bien documentada y completamente funcional.
+
+Para cualquier pregunta técnica durante la presentación, el código está
+completamente comentado y las pruebas proporcionan ejemplos de uso detallados.
+
+Recuerda: La clave está en demostrar no solo que funciona, sino que entiendes
+los conceptos subyacentes de sistemas operativos que implementaste.
