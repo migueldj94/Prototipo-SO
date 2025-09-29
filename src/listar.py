@@ -44,7 +44,7 @@ def mostrar_estadisticas():
     procesos = list(psutil.process_iter(['pid']))
     print(f"Total de procesos ejecutándose: {len(procesos)}")
 
-def main():
+def ejecutar_gestor():
     try:
         while True:
             # Limpiar pantalla (funciona en Windows y Linux/Mac)
@@ -79,4 +79,4 @@ def main():
         print("\n\nInterrupción por teclado. Saliendo...")
 
 if __name__ == "__main__":
-    main()
+    ejecutar_gestor()
